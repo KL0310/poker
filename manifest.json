@@ -1,7 +1,7 @@
 {
   "name": "PokerHost - Chip Manager",
   "short_name": "PokerHost",
-  "start_url": ".",
+  "start_url": "https://kl0310.github.io/poker",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
