@@ -65,15 +65,12 @@
         padding: 0;
         background-color: #0f172a; /* slate-900 */
         color: #f8fafc;
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
       }
 
       body {
         overscroll-behavior: none; /* Prevent pull-to-refresh on mobile */
-        /* Handle Safe Area for iPhone X+ */
-        padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
-        padding-left: env(safe-area-inset-left);
-        padding-right: env(safe-area-inset-right);
       }
 
       #root {
@@ -104,23 +101,42 @@
       }
 
       @media (max-width: 768px) {
-        html, body {
+        html {
           height: 100%;
+          height: 100dvh; /* Dynamic viewport height - accounts for address bar */
           overflow: hidden;
           position: fixed;
           width: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        body {
+          height: 100%;
+          height: 100dvh;
+          overflow: hidden;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          left: 0;
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior-y: none;
+          touch-action: none; /* Completely disable touch scrolling */
+          /* Remove safe area padding on mobile to prevent overflow */
+          padding: 0 !important;
         }
 
         #root {
           height: 100%;
+          height: 100dvh;
           overflow: hidden;
-        }
-
-        /* Disable bounce scrolling on iOS */
-        body {
-          -webkit-overflow-scrolling: touch;
-          overscroll-behavior-y: none;
-          touch-action: pan-x pan-y;
+          position: relative;
+          /* Add safe area padding to root instead */
+          padding-top: env(safe-area-inset-top);
+          padding-bottom: env(safe-area-inset-bottom);
+          padding-left: env(safe-area-inset-left);
+          padding-right: env(safe-area-inset-right);
+          box-sizing: border-box;
         }
       }
 
@@ -143,7 +159,7 @@
       }
     }
     </script>
-    <script type="module" crossorigin src="/poker/assets/index-DwKfOs_7.js"></script>
+    <script type="module" crossorigin src="/poker/assets/index-BM2OZ8IA.js"></script>
   </head>
   <body>
     <div id="root"></div>
