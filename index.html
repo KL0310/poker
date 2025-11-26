@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" />
+    <title>PokerChipMaster</title>
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/poser/assets/manifest-CXtjw-E3.json" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="PokerHost" />
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055836.png" />
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1055/1055836.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              felt: {
+                DEFAULT: '#064e3b', // emerald-900
+                light: '#10b981', // emerald-500
+                dark: '#022c22', // emerald-950
+              },
+              poker: {
+                red: '#ef4444',
+                black: '#171717',
+                gold: '#eab308',
+                white: '#f8fafc',
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            padding: {
+              'safe': 'env(safe-area-inset-bottom)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar for sleek look */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569; 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; 
+      }
+      body {
+        background-color: #0f172a; /* slate-900 */
+        color: #f8fafc;
+        overscroll-behavior: none; /* Prevent pull-to-refresh on mobile */
+        /* Handle Safe Area for iPhone X+ */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+    </style>
+
+    <link rel="stylesheet" href="/index.css">
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+      }
+    }
+    </script>
+    <script type="module" crossorigin src="/poser/assets/index-DwKfOs_7.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
